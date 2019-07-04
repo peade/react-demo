@@ -8,7 +8,8 @@ class routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path='/' component={loadable(() => import('../pages/Index/Index.js'))}/>
-          <Route exact path='/home' component={loadable(() => import('../pages/Home/Index.js'))}/>
+          <Route path='/home' component={loadable(() => import('../pages/Home/Index.js'))}/>
+          <Route path='/parent' component={loadable(() => import('../pages/Parent/Index.js'))}/>
           <Route component={loadable(() => import('../pages/404/Index.js'))}/>
         </Switch>
       </Router>

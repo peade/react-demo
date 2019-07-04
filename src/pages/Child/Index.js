@@ -1,6 +1,5 @@
 import React from 'react';
-import './Index.scss';
-
+import '../../App.css';
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -13,9 +12,7 @@ class Index extends React.Component {
   //   window.location.href = 'http://www.baidu.com'
   render() {
     return (<div className="App">
-        <header className="App-header">
-          Learn React Home
-        </header>
+        <div>Child</div>
       </div>
     )
   }

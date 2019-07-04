@@ -34,6 +34,7 @@ class Index extends React.Component {
           <Router>
             <Link to="/">Index</Link><br/>
             <Link to="/home">Home</Link><br/>
+            <Link to="/parent">Parent</Link><br/>
           </Router>
         </header>
         <button onClick={this.goTo.bind(this)}>go Home</button>
