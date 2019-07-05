@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import {HashRouter as Router, Link, Route} from 'react-router-dom'
 import loadable from '@loadable/component'
 
@@ -28,4 +29,4 @@ class Index extends React.Component {
 
 }
 
-export default Index;
+export default connect()(Index);

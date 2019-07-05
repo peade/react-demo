@@ -1,9 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import './Index.scss';
 
 class Index extends React.Component {
   constructor(props) {
     super(props)
+    console.log('index', this.props)
     console.log(this.props.location.search)
     let param = new URLSearchParams(this.props.location.search)
     console.log(param, param.toString(), param.get('name'))
@@ -22,4 +24,4 @@ class Index extends React.Component {
 
 }
 
-export default Index;
+export default connect()(Index);

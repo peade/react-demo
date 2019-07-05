@@ -1,5 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import '../../App.css';
+
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -19,4 +21,4 @@ class Index extends React.Component {
 
 }
 
-export default Index;
+export default connect()(Index);

@@ -1,16 +1,38 @@
 import React from 'react';
+import {connect} from 'react-redux'
+// import PropTypes from 'prop-types'
 // import {Redirect} from 'react-router-dom'
 import '../../App.css';
 import logo from '../../logo.svg'
 import {HashRouter as Router, Link} from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import {ADD} from '../../store/actions'
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    number: state.AddSub.number
+  }
+}
+const mapDispatchToProps = (dispatch, ownProps) => {
+  // console.log(dispatch)
+  return {
+    // add: num => {
+    //   dispatch(ADD(num))
+    // }
+    // actions:bindActionCreators(ADD(),dispatch)
+  }
+}
 
 class Index extends React.Component {
   constructor(props) {
     super(props)
-    console.log(this.props)
     this.state = {
       name: 111
     }
+  }
+
+  componentDidMount() {
+    console.log(this.props)
   }
 
   goTo() {
@@ -37,6 +59,8 @@ class Index extends React.Component {
             <Link to="/parent">Parent</Link><br/>
           </Router>
         </header>
+        {this.props.number}
+        <button onClick={() => this.props.add(10)}>addNumber</button>
         <button onClick={this.goTo.bind(this)}>go Home</button>
         <button onTouchStart={this.evTwo.bind(this, '11111')}>事件2</button>
       </div>
@@ -44,4 +68,7 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+// Index.propTypes = {
+//   add: PropTypes.func.isRequired
+// }
+export default connect(mapStateToProps, mapDispatchToProps)(Index)
